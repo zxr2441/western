@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>找回密码</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/style.css">
+    <script rel="script" src="js/jquery.min.js"></script>
+    <script rel="script" src="js/pottery.js"></script>
+</head>
+<body>
+<div class="retrieve_one">
+    <a href="login.html"><img src="images/reone.png" class="retrieve_oneimg"></a>
+    <h1 class="retrieve_oneh1">找回密码</h1>
+</div>
+<div class="login_two retrieve_two">
+    <input type="text" placeholder="请输入手机号"  class="login_twoipt" />
+    <div class="login_two_one">
+        <input type="text" placeholder="请输入验证码" class="login_two_oneipt register_two_oneipt"/>
+        <input type="button" class="register_fivipt" id="register_fivipt" value="获取验证码" onclick="codeButton()"/>
+    </div>
+    <input type="password" placeholder="请输入密码"  class="login_twoipt" />
+    <input type="password" placeholder="请再次输入密码"  class="login_twoipt" />
+    <p class="register_onep">密码由6~20位字母、数字组成</p>
+    <input type="button" class="login_two_thr" value="确认"/>
+</div>
+<script type="text/javascript">
+    //验证码
+    function codeButton(){
+        var code = $("#register_fivipt");
+        code.attr("disabled","disabled");
+        var time = 60;
+        var set=setInterval(function(){
+            code.val("("+--time+")秒后重新获取");
+        }, 1000);
+        setTimeout(function(){
+            code.attr("disabled",false).val("重新获取验证码");
+            clearInterval(set);
+        }, 60000);
+    }
+</script>
+</body>
+</html>

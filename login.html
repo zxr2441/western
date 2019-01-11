@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/style.css">
+    <script rel="script" src="js/jquery.min.js"></script>
+    <script rel="script" src="js/pottery.js"></script>
+</head>
+
+<body>
+<div>
+    <img src="images/xglogo.png" class="login_oneimg">
+</div>
+<div class="login_two">
+    <input type="text" placeholder="请输入用户名"  class="login_twoipt" />
+    <div class="login_two_one">
+        <input type="password" placeholder="登录密码" id="demo_input" class="login_two_oneipt"/>
+        <div class="login_two_two">
+            <img id="demo_img" class="login_two_twoimg" onclick="hideShowPsw()" src="images/lgtwo.png">
+            <a href="retrieve.html" class="login_two_twoa">忘记密码</a>
+        </div>
+    </div>
+    <input type="button" class="login_two_thr" value="登录"/>
+    <div class="login_two_for">
+        <a href="verify.html" class="login_two_forspan">短信验证码登录</a>
+        <a href="register.html" class="login_two_fora">新用户注册</a>
+    </div>
+</div>
+<script type="text/javascript">
+    //隐藏密码
+    var demoImg = document.getElementById("demo_img");
+    var demoInput = document.getElementById("demo_input");
+    function hideShowPsw(){
+        if (demoInput.type == "password") {
+            demoInput.type = "text";
+            demo_img.src = "images/lgthre.png";
+        }else {
+            demoInput.type = "password";
+            demo_img.src = "images/lgtwo.png";
+        }
+    }
+</script>
+</body>
+</html>
